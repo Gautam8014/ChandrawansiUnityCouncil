@@ -1,2 +1,2 @@
 # ChandrawansiUnityCouncil
-Resistration form
+Registration form
