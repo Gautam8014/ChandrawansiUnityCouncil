@@ -1,0 +1,143 @@
+/* Whatsapp.css */
+
+/* General container styling */
+.whatsapp-container {
+    font-family: 'Roboto', sans-serif;
+    margin: 20px auto;
+    padding: 30px;
+    max-width: 900px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Section styling */
+  .whatsapp-section {
+    margin-bottom: 40px;
+  }
+  
+  /* Section header styling */
+  .whatsapp-section-title {
+    font-size: 2.4rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  .whatsapp-section-title::after {
+    content: '';
+    width: 100px;
+    height: 5px;
+    background: #2980b9;
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  /* Quotes styling */
+  .whatsapp-quote {
+    background: #f0f8ff;
+    color: #2d3436;
+    border-left: 5px solid #3498db;
+    margin: 20px 0;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .whatsapp-quote:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Hindi quote styling */
+  .whatsapp-quote-hindi {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #34495e;
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  /* English translation styling */
+  .whatsapp-quote-english {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+  }
+  
+  /* Developer credit styling */
+  .whatsapp-dev {
+    font-size: 1rem;
+    color: #2d3436;
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .whatsapp-dev a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .whatsapp-dev a:hover {
+    color: #1abc9c;
+  }
+  
+  .whatsapp-heart {
+    color: #e74c3c;
+    animation: pulse 2s infinite;
+  }
+  
+  /* Heart animation */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  /* Section divider styling */
+  .whatsapp-section:not(:last-child) {
+    border-bottom: 2px dashed #bdc3c7;
+    padding-bottom: 30px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .whatsapp-container {
+      padding: 20px;
+      max-width: 95%;
+    }
+  
+    .whatsapp-section-title {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+  
+    .whatsapp-quote {
+      padding: 15px 20px;
+    }
+  
+    .whatsapp-quote-hindi {
+      font-size: 1.2rem;
+    }
+  
+    .whatsapp-quote-english {
+      font-size: 1rem;
+    }
+  
+    .whatsapp-dev {
+      font-size: 0.9rem;
+    }
+  }
+  
