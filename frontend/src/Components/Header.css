@@ -1,0 +1,48 @@
+/* Container for the header */
+.header-container {
+  position: sticky; /* Makes the header sticky */
+  top: 0; /* Sticks the header to the top of the viewport */
+  z-index: 1000; /* Ensures the header stays on top of other elements */
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Increased space between the lion and the text */
+  background-color: #f0f8ff; /* Light blue background */
+  border-radius: 8px; /* Rounded corners for a polished look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Styling for the header text */
+.header-text {
+  font-size: 28px;
+  font-family: "Arial", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  animation: colorSwitch 3s infinite; /* Apply color-switch animation */
+}
+
+/* Animation for color switching */
+@keyframes colorSwitch {
+  0% {
+    color: blue;
+  }
+  33% {
+    color: green;
+  }
+  66% {
+    color: red;
+  }
+  100% {
+    color: blue;
+  }
+}
+
+/* Styling for the lion icons */
+.lion-icon {
+  width: 50px; /* Set the size of the lion logo */
+  height: 50px; /* Set the height of the lion logo */
+  object-fit: contain; /* Ensures the logo keeps its aspect ratio */
+  color: goldenrod; /* Optional color for the icon, if it is SVG or font-based */
+}

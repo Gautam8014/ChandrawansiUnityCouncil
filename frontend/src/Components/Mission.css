@@ -1,0 +1,201 @@
+/* General container styles */
+.mission-container {
+  font-family: "Arial", sans-serif;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 1200px;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Mission title style */
+.mission-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(45deg, #ff6a00, #ffcc00, #ff1493);
+  background-clip: text;
+  color: transparent;
+  animation: slideIn 1.5s ease-out;
+  margin-bottom: 20px;
+}
+
+/* Mission description style */
+.mission-description {
+  font-size: 1.2rem;
+  color: #34495e;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeInText 3s ease-in-out;
+}
+
+/* Plans section title style */
+.plans-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2980b9;
+  margin-top: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  animation: bounceIn 1.5s ease-out;
+}
+
+/* List of plans with animation */
+.plans-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 20px;
+}
+
+.plan-item {
+  font-size: 1.1rem;
+  color: #fff;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+  animation: slideInLeft 0.8s ease-in-out;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #ff6a00, #ffcc00, #ff1493);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan-item:nth-child(odd) {
+  background: linear-gradient(45deg, #3498db, #8e44ad);
+}
+
+.plan-item:nth-child(even) {
+  background: linear-gradient(45deg, #2ecc71, #e74c3c);
+}
+
+.plan-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.plan-item::before {
+  content: "✔";
+  font-size: 1.5rem;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* Animation for each plan item */
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsibility section style */
+.responsibility {
+  font-size: 1.3rem;
+  font-style: italic;
+  color: #9b59b6;
+  margin-top: 40px;
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+/* Final message style */
+.final-message {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 30px;
+  animation: fadeInText 2.5s ease-in-out;
+}
+
+/* Closing style */
+.closing {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #8e44ad;
+  text-align: center;
+  margin-top: 30px;
+  animation: bounceIn 2s ease-in-out;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

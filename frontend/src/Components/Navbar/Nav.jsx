@@ -9,16 +9,18 @@ export const Navbar = () => {
   const pages = [
     { title: 'Home', path: '/' },
     { title: 'Join Us', path: '/registrationform' },
-    {title: 'Whatsapp Stutes' , path:'/whatsapp'}
+    {title: 'Whatsapp Stutes' , path:'/whatsapp'},
+    {title: "Our mission" , path: '/mission'}
   ];
 
   return (
     <nav className="nav">
+       
       <div className="navbar-logo">
         <img src={logo} alt="Logo" className="logo-image" />
         {/* <h1 className="logo-image">चंद्रवंशी एकता परिषद</h1> */}
       </div>
-
+      <h1 className="header-text">   चंद्रवंशी एकता परिषद </h1>
       
       <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
         {pages.map((item, index) => (

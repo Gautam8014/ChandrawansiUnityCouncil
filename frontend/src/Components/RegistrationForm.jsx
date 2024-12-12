@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./RegistrationForm.css";
-// import j1 from '../Assets/j1.webp';/
-import j3 from './Assets/j3.avif';
+
 function RegistrationForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,7 +23,6 @@ function RegistrationForm() {
         address: { ...prev.address, [name]: value },
       }));
 
-      // Fetch address details when pincode changes
       if (name === "pincode" && value.length === 6) {
         fetchAddressFromPincode(value);
       }
@@ -59,19 +57,48 @@ function RegistrationForm() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Registered Data:", formData);
-    alert("Registration Successful!");
+    setLoading(true);
+    try {
+      const response = await fetch("http://localhost:8000/post", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Response:", data);
+        alert("Registration Successful!");
+        setFormData({
+          name: "",
+          mobileNumber: "",
+          address: {
+            houseNumber: "",
+            policeStation: "",
+            pincode: "",
+            city: "",
+            state: "",
+          },
+        });
+      } else {
+        const error = await response.json();
+        alert(`Failed to register: ${error.message}`);
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("An error occurred. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <div className="registration-form">
-    
-
-
-
-      <h2>Registration Form</h2>
+      <h2>Member Registration Form</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Name:</label>
@@ -157,8 +184,8 @@ function RegistrationForm() {
           />
         </div>
 
-        <button type="submit" className="submit-button">
-          Register
+        <button type="submit" className="submit-button" disabled={loading}>
+          {loading ? "Submitting..." : "Register"}
         </button>
       </form>
     </div>
